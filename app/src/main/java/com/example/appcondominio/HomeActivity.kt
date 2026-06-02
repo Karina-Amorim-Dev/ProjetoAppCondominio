@@ -15,6 +15,7 @@ class HomeActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.txtrecyclerView)) { v, insets ->
+
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -29,6 +30,13 @@ class HomeActivity : AppCompatActivity() {
         buttonBoleto.setOnClickListener{
             startActivity(intentBoleto)
         }
+
+        val intentResreva = Intent(this, ReservaActivity::class.java)
+        val buttonReserva = findViewById<Button>(R.id.btnReserva)
+        buttonReserva.setOnClickListener {
+            startActivity(intentResreva)
+        }
+
 
     }
 }
