@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,11 @@ class BoletoActivity : AppCompatActivity() {
             insets
         }
 
+        val toolBarBoleto = findViewById<Toolbar>(R.id.toolbarBoleto)
+        setSupportActionBar(toolBarBoleto)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val boletos = listOf(
             Boleto("Taxa Condominio Maio", "R$ 1500", "18/05//2026"),
             Boleto("Taxa Condominio Maio", "R$ 1500", "18/05//2026"),
@@ -29,7 +35,11 @@ class BoletoActivity : AppCompatActivity() {
         val rc = findViewById<RecyclerView>(R.id.txtrecyclerViewBoleto)
         rc.layoutManager = LinearLayoutManager (this)
         rc.adapter = BoletoAdapter(boletos)
+
+
     }
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
