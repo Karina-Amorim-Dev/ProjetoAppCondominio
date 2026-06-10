@@ -22,7 +22,7 @@
         app:titleTextColor="#0B0B0B" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/txtrecyclerViewMural"
         android:layout_width="409dp"
         android:layout_height="665dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,16 +36,16 @@
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="524dp"
         android:backgroundTint="#00BCD4"
         android:text="Voltar"
         android:textColor="#050505"
         android:textSize="24dp"
         app:cornerRadius="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtrecyclerViewMural"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarMural"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

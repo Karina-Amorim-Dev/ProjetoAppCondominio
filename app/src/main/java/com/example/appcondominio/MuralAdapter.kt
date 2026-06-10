@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MuralAdapter (private  val mural : List<String>) : RecyclerView.Adapter<MuralAdapter.MuralViewHolder>() {
 
     class MuralViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val titulo: TextView = itemView.findViewById(R.id.txtTitulo)
+        val comunicados: TextView = itemView.findViewById(R.id.txtComunicados)
     }
 
 
@@ -26,7 +26,7 @@ class MuralAdapter (private  val mural : List<String>) : RecyclerView.Adapter<Mu
 
     override fun onBindViewHolder(holder: MuralAdapter.MuralViewHolder, position: Int) {
         val mural = mural[position]
-        holder.titulo.text = mural
+        holder.comunicados.text = mural
     }
 
     override fun getItemCount(): Int {

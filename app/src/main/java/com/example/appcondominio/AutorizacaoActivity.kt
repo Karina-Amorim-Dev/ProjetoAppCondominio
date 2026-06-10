@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.DatePicker
+import androidx.appcompat.widget.Toolbar
+import android.view.MenuItem
 
 
 class AutorizacaoActivity : AppCompatActivity() {
@@ -27,6 +29,10 @@ class AutorizacaoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val toolBarAutorizacao = findViewById<Toolbar>(R.id.toolbarAutorizacao)
+        setSupportActionBar(toolBarAutorizacao)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val txtNome = findViewById<EditText>(R.id.TextNome)
         val txtDocumento = findViewById<EditText>(R.id.TextDocumento)
@@ -73,6 +79,19 @@ class AutorizacaoActivity : AppCompatActivity() {
             Handler(Looper.getMainLooper()).postDelayed({
                 txtMensagem.visibility = View.GONE
             }, 2000)
+
+
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

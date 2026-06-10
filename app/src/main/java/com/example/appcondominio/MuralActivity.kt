@@ -16,6 +16,7 @@ class MuralActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_mural)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -34,7 +35,7 @@ class MuralActivity : AppCompatActivity() {
 
         val mural = listOf("Novo Bicicletário", "Portão de Veículos", "Alarme do Edificio", "Festa Junina")
 
-        val rc = findViewById<RecyclerView>(R.id.txtrecyclerView)
+        val rc = findViewById<RecyclerView>(R.id.txtrecyclerViewMural)
         rc.layoutManager = LinearLayoutManager (this)
         rc.adapter = MuralAdapter(mural)
     }
