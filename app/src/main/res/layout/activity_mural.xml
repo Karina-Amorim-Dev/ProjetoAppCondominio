@@ -2,43 +2,35 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/txtrecyclerView"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
-    tools:context=".ReservaActivity">
+    tools:context=".MuralActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbarReserva"
+        android:id="@+id/toolbarMural"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:backgroundTint="#00BCD4"
+        android:background="#00BCD4"
         android:minHeight="?attr/actionBarSize"
-        android:textAlignment="center"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/txtrecyclerViewReserva"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:title="Reservas"
+        app:title="Comunicações"
         app:titleCentered="true"
-        app:titleTextColor="#070707" />
+        app:titleTextColor="#0B0B0B" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/txtrecyclerViewReserva"
+        android:id="@+id/recyclerView"
         android:layout_width="409dp"
         android:layout_height="665dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarReserva"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMural"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnVoltar"
@@ -46,15 +38,14 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
         android:text="Voltar"
-        android:textAlignment="center"
-        android:textColor="#070707"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textColor="#050505"
+        android:textSize="24dp"
         app:cornerRadius="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtrecyclerViewReserva"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarReserva"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMural"
+        app:layout_constraintVertical_bias="0.778" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

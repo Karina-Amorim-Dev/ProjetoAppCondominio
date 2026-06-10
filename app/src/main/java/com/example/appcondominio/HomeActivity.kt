@@ -43,6 +43,12 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intentAutorizacao)
         }
 
+        val intentMural = Intent(this, MuralActivity::class.java)
+        val buttonMural = findViewById<Button>(R.id.btnMural)
+        buttonMural.setOnClickListener {
+            startActivity(intentMural)
+        }
+
 
     }
 }

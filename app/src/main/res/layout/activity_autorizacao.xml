@@ -3,30 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAutorizacao"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="AutorizacaoActivity"
-    android:id="@+id/layoutAutorizacao">
+    tools:context=".AutorizacaoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAutorizacao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="?attr/colorPrimary"
+        android:background="#00BCD4"
         android:minHeight="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:title="Cadastro de Autorização"
-        app:titleTextColor="@color/black" />
+        app:titleTextColor="@android:color/black" />
 
     <TextView
         android:id="@+id/textViewNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="Nome Completo"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,105 +33,157 @@
 
     <EditText
         android:id="@+id/TextNome"
+        android:minHeight="48dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/baseline_person_24"
-        android:hint="   Digite o nome completo"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
+        android:hint="Digite o nome completo"
+        android:textColorHint="#757575"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/textViewNome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewNome" />
-
-    <EditText
-        android:id="@+id/TextApartamento"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
-        android:drawableStart="@drawable/baseline_apartment_24"
-        android:hint="   Digite o apto ou bloco"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewApartamento" />
-
-    <EditText
-        android:id="@+id/TextDocumento"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
-        android:drawableStart="@drawable/baseline_add_card_24"
-        android:hint="   Digite o documento ou CPF"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewDocumento" />
-
-    <Button
-        android:id="@+id/btnSalvar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Salvar Autorização"
-        android:textColor="#040404"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/datepickerAutorizacao" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textViewDocumento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-
+        android:layout_marginTop="12dp"
         android:text="Documento / CPF"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/TextNome"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/TextDocumento"
+        android:minHeight="48dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/baseline_add_card_24"
+        android:hint="Digite o documento ou CPF"
+        android:textColorHint="#757575"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/textViewDocumento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextNome" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textViewApartamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-
+        android:layout_marginTop="12dp"
         android:text="Apartamento / Bloco"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/TextDocumento"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/TextApartamento"
+        android:minHeight="48dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/baseline_apartment_24"
+        android:hint="Digite o apartamento ou bloco"
+        android:textColorHint="#757575"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/textViewApartamento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextDocumento" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textViewApartamento2"
+        android:id="@+id/textViewData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
         android:drawableStart="@drawable/baseline_date_range_24"
-        android:text="   Data de Autorização"
+        android:text=" Data de Autorização"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/datepickerAutorizacao"
+        app:layout_constraintTop_toBottomOf="@id/TextApartamento"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutCabecalhoData"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textViewData"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextApartamento" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Dia"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Mês"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Ano"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <DatePicker
         android:id="@+id/datepickerAutorizacao"
         android:layout_width="270dp"
-        android:layout_height="273dp"
+        android:layout_height="180dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCabecalhoData"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewApartamento2" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/txtMensagem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/datepickerAutorizacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Salvar Autorização"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/txtMensagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

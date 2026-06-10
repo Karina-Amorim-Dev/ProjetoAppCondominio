@@ -86,6 +86,7 @@
             app:cornerRadius="1dp" />
 
         <Button
+            android:id="@+id/btnMudanca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -96,7 +97,7 @@
             android:textColor="#090909"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:cornerRadius="1dp"/>
+            app:cornerRadius="1dp" />
 
     </LinearLayout>
 

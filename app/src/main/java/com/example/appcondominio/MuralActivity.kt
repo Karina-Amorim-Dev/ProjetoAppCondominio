@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.Button
 
-class ReservaActivity : AppCompatActivity() {
+class MuralActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_reserva)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.toolbarReserva)) { v, insets ->
+        setContentView(R.layout.activity_mural)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -28,15 +28,15 @@ class ReservaActivity : AppCompatActivity() {
             finish()
         }
 
-        val toolBarReserva = findViewById<Toolbar>(R.id.toolbarReserva)
-        setSupportActionBar(toolBarReserva)
+        val toolBarMural = findViewById<Toolbar>(R.id.toolbarMural)
+        setSupportActionBar(toolBarMural)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val reserva = listOf("Academia", "Brinquedoteca", "Churrasqueira", "Sala de Festas", "Salão de Jogos")
+        val mural = listOf("Novo Bicicletário", "Portão de Veículos", "Alarme do Edificio", "Festa Junina")
 
-        val rc = findViewById<RecyclerView>(R.id.txtrecyclerViewReserva)
+        val rc = findViewById<RecyclerView>(R.id.txtrecyclerView)
         rc.layoutManager = LinearLayoutManager (this)
-        rc.adapter = ReservaAdapter(reserva)
+        rc.adapter = MuralAdapter(mural)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){

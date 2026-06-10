@@ -1,68 +1,78 @@
 package com.example.appcondominio
 
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.view.MenuItem
+import android.os.Handler
+import android.os.Looper
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.DatePicker
+
 
 class AutorizacaoActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_autorizacao)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btnSalvar)) { v, insets ->
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutAutorizacao)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        val txtNome = findViewById<EditText>(R.id.TextNome)
+        val txtDocumento = findViewById<EditText>(R.id.TextDocumento)
+        val txtApartamento = findViewById<EditText>(R.id.TextApartamento)
+        val txtMensagem = findViewById<TextView>(R.id.txtMensagem)
+
         val btnSalvar = findViewById<Button>(R.id.btnSalvar)
+
         btnSalvar.setOnClickListener {
 
-            val nome = findViewById<EditText>(R.id.TextNome).text.toString().trim()
-            val documento = findViewById<EditText>(R.id.TextDocumento).text.toString().trim()
-            val apartamento = findViewById<EditText>(R.id.TextApartamento).text.toString().trim()
+            val nome = txtNome.text.toString().trim()
+            val documento = txtDocumento.text.toString().trim()
+            val apartamento = txtApartamento.text.toString().trim()
+
+            val datePicker = findViewById<DatePicker>(R.id.datepickerAutorizacao)
 
             if (nome.isEmpty() || documento.isEmpty() || apartamento.isEmpty()) {
 
-                Toast.makeText(
-                    this,
-                    "Todos os campos são obrigatórios",
-                    Toast.LENGTH_LONG
-                ).show()
+                txtMensagem.text = "Todos os campos são obrigatórios"
+                txtMensagem.setTextColor(Color.parseColor("#D32F2F"))
+                txtMensagem.visibility = View.VISIBLE
 
             } else {
 
-                Toast.makeText(
-                    this,
-                    "Autorização realizada com sucesso",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
+                txtMensagem.text = "Autorização cadastrada com sucesso!"
+                txtMensagem.setTextColor(Color.parseColor("#2E7D32"))
+                txtMensagem.visibility = View.VISIBLE
 
-        val toolBarAutorizacao = findViewById<Toolbar>(R.id.toolbarAutorizacao)
-        setSupportActionBar(toolBarAutorizacao)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
+                // Limpa os campos
+                txtNome.text.clear()
+                txtDocumento.text.clear()
+                txtApartamento.text.clear()
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                true
+                // Volta a data para hoje
+                val calendario = java.util.Calendar.getInstance()
+
+                datePicker.updateDate(
+                    calendario.get(java.util.Calendar.YEAR),
+                    calendario.get(java.util.Calendar.MONTH),
+                    calendario.get(java.util.Calendar.DAY_OF_MONTH)
+                )
             }
 
-            else -> super.onOptionsItemSelected(item)
+            Handler(Looper.getMainLooper()).postDelayed({
+                txtMensagem.visibility = View.GONE
+            }, 2000)
         }
-
     }
 }

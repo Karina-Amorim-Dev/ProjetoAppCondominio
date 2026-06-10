@@ -36,10 +36,7 @@ class BoletoActivity : AppCompatActivity() {
         rc.layoutManager = LinearLayoutManager (this)
         rc.adapter = BoletoAdapter(boletos)
 
-
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
